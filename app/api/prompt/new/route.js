@@ -15,7 +15,7 @@ export const POST = async (request) => {
       status: 201,
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify('Failed to create a new prompt'), {
       status: 500,
     });
   }
