@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
@@ -55,7 +54,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+            className="px-5 py-1.5 text-sm bg-primary-orange disabled:bg-primary-orange/70 rounded-full text-white"
           >
             {submitting ? `${type}ing...` : type}
           </button>
