@@ -10,14 +10,14 @@ const ProfilePage = () => {
   const { data: session } = useSession();
   const [userPosts, setUserPosts] = useState([]);
 
+  const fetchUserPosts = async () => {
+    const response = await fetch(`/api/users/${session?.user.id}/posts`);
+    const data = await response.json();
+
+    setUserPosts(data);
+  };
+
   useEffect(() => {
-    const fetchUserPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
-      const data = await response.json();
-
-      setUserPosts(data);
-    };
-
     if (session?.user.id) fetchUserPosts();
   }, []);
 
